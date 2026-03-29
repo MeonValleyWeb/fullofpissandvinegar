@@ -1,6 +1,6 @@
 ---
 const title = "Full of Piss and Vinegar";
-const description = "Football banter, sarcasm, and wit - no filters, no apologies";
+const description = "Football banter, sarcasm, and wit - you know you've got to let it out!";
 ---
 
 <html lang="en">
@@ -14,14 +14,15 @@ const description = "Football banter, sarcasm, and wit - no filters, no apologie
 		<title>{title}</title>
 		<style>
 			:root {
-				--pv-green: #00a651;
-				--pv-dark-green: #008c44;
-				--pv-yellow: #d4ff00;
-				--pv-lime: #ccff00;
-				--pv-beige: #d4b896;
-				--pv-tan: #c9a86c;
-				--pv-black: #1a1a1a;
-				--pv-white: #ffffff;
+				--bg-light: #e8e8e8;
+				--bg-cream: #f5f5f0;
+				--lime: #c8e600;
+				--lime-bright: #d4ff00;
+				--gold: #d4a84b;
+				--tan: #c9a86c;
+				--navy: #2a2a3a;
+				--dark: #1a1a2e;
+				--black: #0a0a0a;
 			}
 			* {
 				margin: 0;
@@ -29,149 +30,154 @@ const description = "Football banter, sarcasm, and wit - no filters, no apologie
 				box-sizing: border-box;
 			}
 			body {
-				font-family: 'Impact', 'Arial Black', 'Helvetica Neue', sans-serif;
-				background: var(--pv-green);
-				color: var(--pv-black);
+				font-family: 'Impact', 'Arial Black', 'Franklin Gothic', sans-serif;
+				background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-cream) 60%, var(--navy) 100%);
+				color: var(--black);
 				min-height: 100vh;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				justify-content: center;
+				justify-content: flex-start;
+				padding-top: 3rem;
 				overflow-x: hidden;
+				position: relative;
+			}
+			body::after {
+				content: '';
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 200px;
+				background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200"><path d="M0,200 L0,150 Q30,120 60,140 Q90,100 120,130 Q150,90 180,120 Q210,80 240,110 Q270,70 300,100 Q330,60 360,90 Q390,50 420,80 Q450,40 480,70 Q510,30 540,60 Q570,20 600,50 Q630,20 660,60 Q690,30 720,70 Q750,40 780,80 Q810,50 840,90 Q870,60 900,100 Q930,70 960,110 Q990,80 1020,120 Q1050,90 1080,130 Q1110,100 1140,140 Q1170,120 1200,150 L1200,200 Z" fill="%232a2a3a"/></svg>') no-repeat bottom;
+				background-size: cover;
+				z-index: 1;
 			}
 			.container {
 				text-align: center;
 				padding: 2rem;
 				max-width: 900px;
+				z-index: 2;
+				position: relative;
 			}
 			.logo {
-				font-size: clamp(3rem, 10vw, 6rem);
+				font-size: clamp(3.5rem, 12vw, 7rem);
 				font-weight: 900;
 				letter-spacing: -2px;
-				margin-bottom: 0.5rem;
+				margin-bottom: 1rem;
 				text-transform: uppercase;
-				line-height: 0.9;
-			}
-			.logo-top {
-				background: var(--pv-black);
-				color: var(--pv-white);
-				padding: 0.2rem 1rem;
+				line-height: 0.85;
+				position: relative;
 				display: inline-block;
-				transform: skew(-5deg);
 			}
-			.logo-middle {
-				color: var(--pv-lime);
-				text-shadow: 4px 4px 0 var(--pv-black);
-				font-size: 1.3em;
-				display: block;
+			.logo-full-of {
+				display: inline-block;
+				background: var(--black);
+				color: white;
+				padding: 0.1rem 0.6rem;
+				font-size: 0.35em;
+				vertical-align: top;
+				margin-right: -0.5rem;
+				letter-spacing: 1px;
 			}
-			.logo-small {
-				color: var(--pv-white);
-				font-size: 0.4em;
+			.logo-piss {
+				color: var(--lime);
+				text-shadow: 3px 3px 0 var(--black);
+			}
+			.logo-and {
+				display: inline-block;
+				background: var(--black);
+				color: white;
+				font-size: 0.25em;
+				padding: 0.2rem 0.3rem;
 				vertical-align: middle;
-				background: var(--pv-black);
-				padding: 0.1rem 0.3rem;
-				display: inline-block;
-				transform: rotate(-5deg);
+				margin: 0 0.2rem;
+				writing-mode: vertical-rl;
+				text-orientation: mixed;
+				letter-spacing: 2px;
 			}
-			.logo-bottom {
-				color: var(--pv-tan);
-				text-shadow: 3px 3px 0 var(--pv-black);
-				font-size: 0.9em;
-				display: block;
+			.logo-vinegar {
+				color: var(--gold);
+				text-shadow: 3px 3px 0 var(--black);
 			}
 			.tagline {
-				font-size: 1.4rem;
-				color: var(--pv-black);
-				margin-bottom: 2rem;
-				font-weight: 900;
-				text-transform: uppercase;
-				letter-spacing: 2px;
-				background: var(--pv-yellow);
-				padding: 0.5rem 1rem;
-				display: inline-block;
-				transform: rotate(-2deg);
+				font-size: 1.3rem;
+				color: var(--black);
+				margin: 1.5rem 0;
+				font-weight: 700;
+				font-style: italic;
 			}
 			.banter-quote {
-				font-size: 1.2rem;
-				color: var(--pv-black);
+				font-size: 1.1rem;
+				color: var(--navy);
 				font-style: italic;
 				margin: 2rem auto;
 				font-family: 'Georgia', serif;
-				background: var(--pv-white);
-				padding: 1rem 1.5rem;
-				border-left: 6px solid var(--pv-black);
 				max-width: 600px;
-				transform: rotate(1deg);
-				box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+				padding: 0 1rem;
 			}
 			.coming-soon {
-				background: var(--pv-black);
-				color: var(--pv-lime);
-				padding: 1.2rem 3rem;
+				background: var(--black);
+				color: var(--lime);
+				padding: 1rem 2.5rem;
 				font-weight: 900;
 				text-transform: uppercase;
-				letter-spacing: 3px;
+				letter-spacing: 4px;
 				display: inline-block;
-				font-size: 1.3rem;
-				transform: skew(-5deg);
-				transition: all 0.3s ease;
-				border: 4px solid var(--pv-yellow);
-			}
-			.coming-soon:hover {
-				transform: skew(0deg) scale(1.05);
-				color: var(--pv-yellow);
+				font-size: 1.1rem;
+				margin-top: 1rem;
 			}
 			.grid {
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 				gap: 2rem;
-				margin-top: 4rem;
+				margin-top: 3rem;
+				margin-bottom: 220px;
 				width: 100%;
 			}
 			.card {
-				background: var(--pv-black);
+				background: white;
 				padding: 2rem;
-				border: 4px solid var(--pv-yellow);
-				color: var(--pv-white);
-				transform: rotate(-1deg);
-				transition: transform 0.3s ease;
+				border: 3px solid var(--black);
+				color: var(--black);
+				box-shadow: 5px 5px 0 var(--lime);
+				transition: all 0.3s ease;
 			}
 			.card:hover {
-				transform: rotate(0deg) scale(1.02);
+				transform: translate(-3px, -3px);
+				box-shadow: 8px 8px 0 var(--lime);
 			}
 			.card h3 {
-				color: var(--pv-lime);
+				color: var(--black);
 				margin-bottom: 1rem;
-				font-size: 1.4rem;
+				font-size: 1.3rem;
 				text-transform: uppercase;
 				letter-spacing: 1px;
 			}
 			.card p {
-				color: #ccc;
+				color: #444;
 				font-size: 1rem;
 				font-family: 'Helvetica Neue', Arial, sans-serif;
-				font-weight: 400;
 			}
 			footer {
-				margin-top: 4rem;
-				color: var(--pv-black);
-				font-size: 0.9rem;
+				margin-top: 2rem;
+				color: var(--black);
+				font-size: 0.85rem;
 				text-transform: uppercase;
 				letter-spacing: 2px;
-				font-weight: 700;
+				font-weight: 600;
+				margin-bottom: 180px;
 			}
 		</style>
 	</head>
 	<body>
 		<div class="container">
 			<div class="logo">
-				<span class="logo-top">FULL OF</span>
-				<span class="logo-middle">PISS<span class="logo-small">AND</span></span>
-				<span class="logo-bottom">VINEGAR</span>
+				<span class="logo-full-of">FULL OF</span><br/>
+				<span class="logo-piss">PISS</span><span class="logo-and">AND</span><span class="logo-vinegar">VINEGAR</span>
 			</div>
 			
-			<p class="tagline">Football Banter • Sarcasm • Wit</p>
+			<p class="tagline">You know you've got to let it out!</p>
 			
 			<p class="banter-quote">"We're not here to make friends, we're here to take the piss... professionally."</p>
 			
