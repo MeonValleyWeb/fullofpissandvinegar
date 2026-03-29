@@ -1,6 +1,6 @@
 ---
 const title = "Full of Piss and Vinegar";
-const description = "Bold, unapologetic, full of energy";
+const description = "Football banter, sarcasm, and wit - no filters, no apologies";
 ---
 
 <html lang="en">
@@ -70,15 +70,25 @@ const description = "Bold, unapologetic, full of energy";
 				50% { text-shadow: 3px 3px 0 var(--pv-orange), 6px 6px 20px rgba(255,102,0,0.5); }
 			}
 			.tagline {
-				font-size: 1.5rem;
+				font-size: 1.3rem;
 				color: var(--pv-orange);
 				margin-bottom: 2rem;
 				font-weight: 700;
 				text-transform: uppercase;
-				letter-spacing: 4px;
+				letter-spacing: 3px;
 			}
 			.tagline span {
 				color: var(--pv-red);
+			}
+			.banter-quote {
+				font-size: 1.1rem;
+				color: #888;
+				font-style: italic;
+				margin-bottom: 2rem;
+				font-family: 'Georgia', serif;
+				border-left: 4px solid var(--pv-red);
+				padding-left: 1rem;
+				text-align: left;
 			}
 			.coming-soon {
 				background: linear-gradient(135deg, var(--pv-red) 0%, var(--pv-orange) 100%);
@@ -156,27 +166,29 @@ const description = "Bold, unapologetic, full of energy";
 		<div class="container">
 			<h1 class="logo">Full of<br/>Piss and<br/>Vinegar</h1>
 			<div class="accent-line"></div>
-			<p class="tagline">Bold • <span>Unapologetic</span> • Full of Energy</p>
+			<p class="tagline">Football Banter • <span>Sarcasm</span> • Wit</p>
+			
+			<p class="banter-quote">"We're not here to make friends, we're here to take the piss... professionally."</p>
 			
 			<div class="coming-soon">Coming Soon</div>
 			
 			<div class="grid">
 				<div class="card">
-					<h3>🔥 Raw Energy</h3>
-					<p>Unfiltered content that hits different</p>
+					<h3>⚽ Matchday Banter</h3>
+					<p>Unfiltered takes on the beautiful game</p>
 				</div>
 				<div class="card">
-					<h3>⚡ No BS</h3>
-					<p>We say what others won't</p>
+					<h3>🎭 Zero Chill</h3>
+					<p>Sarcasm level: Expert. Tact: None.</p>
 				</div>
 				<div class="card">
-					<h3>💀 Stay Bold</h3>
-					<p>Never apologize for being yourself</p>
+					<h3>🍺 Proper Wit</h3>
+					<p>Like the pub, but you can't punch us</p>
 				</div>
 			</div>
 			
 			<footer>
-				Built with Astro • Deployed on Cloudflare Pages • Live Now!
+				Built with Astro • Deployed on Cloudflare Pages
 			</footer>
 		</div>
 	</body>
