@@ -1,5 +1,6 @@
 ---
-
+const title = "Full of Piss and Vinegar";
+const description = "Bold, unapologetic, full of energy";
 ---
 
 <html lang="en">
@@ -9,9 +10,174 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<meta name="description" content={description} />
+		<title>{title}</title>
+		<style>
+			:root {
+				--pv-black: #0a0a0a;
+				--pv-dark: #1a1a1a;
+				--pv-red: #ff3300;
+				--pv-orange: #ff6600;
+				--pv-yellow: #ffcc00;
+				--pv-white: #f5f5f5;
+			}
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				font-family: 'Impact', 'Arial Black', 'Helvetica Neue', sans-serif;
+				background: linear-gradient(135deg, var(--pv-black) 0%, var(--pv-dark) 50%, #2a1a1a 100%);
+				color: var(--pv-white);
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				overflow-x: hidden;
+			}
+			.container {
+				text-align: center;
+				padding: 2rem;
+				max-width: 900px;
+				position: relative;
+			}
+			.container::before {
+				content: '';
+				position: absolute;
+				top: -50px;
+				left: -50px;
+				right: -50px;
+				bottom: -50px;
+				background: radial-gradient(circle, rgba(255,51,0,0.1) 0%, transparent 70%);
+				z-index: -1;
+			}
+			.logo {
+				font-size: clamp(2.5rem, 8vw, 5rem);
+				font-weight: 900;
+				letter-spacing: -3px;
+				margin-bottom: 0.5rem;
+				text-transform: uppercase;
+				line-height: 1.1;
+				text-shadow: 
+					3px 3px 0 var(--pv-red),
+					6px 6px 0 rgba(0,0,0,0.3);
+				animation: pulse 3s ease-in-out infinite;
+			}
+			@keyframes pulse {
+				0%, 100% { text-shadow: 3px 3px 0 var(--pv-red), 6px 6px 0 rgba(0,0,0,0.3); }
+				50% { text-shadow: 3px 3px 0 var(--pv-orange), 6px 6px 20px rgba(255,102,0,0.5); }
+			}
+			.tagline {
+				font-size: 1.5rem;
+				color: var(--pv-orange);
+				margin-bottom: 2rem;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 4px;
+			}
+			.tagline span {
+				color: var(--pv-red);
+			}
+			.coming-soon {
+				background: linear-gradient(135deg, var(--pv-red) 0%, var(--pv-orange) 100%);
+				color: var(--pv-black);
+				padding: 1.2rem 3rem;
+				border-radius: 0;
+				font-weight: 900;
+				text-transform: uppercase;
+				letter-spacing: 3px;
+				display: inline-block;
+				font-size: 1.2rem;
+				clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+				transition: all 0.3s ease;
+			}
+			.coming-soon:hover {
+				transform: scale(1.05) rotate(-2deg);
+				clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
+			}
+			.grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 2rem;
+				margin-top: 4rem;
+				width: 100%;
+			}
+			.card {
+				background: rgba(255,51,0,0.1);
+				padding: 2rem;
+				border: 3px solid var(--pv-red);
+				position: relative;
+				overflow: hidden;
+			}
+			.card::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: -100%;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(90deg, transparent, rgba(255,102,0,0.2), transparent);
+				transition: left 0.5s ease;
+			}
+			.card:hover::before {
+				left: 100%;
+			}
+			.card h3 {
+				color: var(--pv-yellow);
+				margin-bottom: 1rem;
+				font-size: 1.3rem;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+			}
+			.card p {
+				color: #aaa;
+				font-size: 1rem;
+				font-family: 'Helvetica Neue', Arial, sans-serif;
+				font-weight: 400;
+			}
+			footer {
+				margin-top: 4rem;
+				color: #555;
+				font-size: 0.9rem;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+			}
+			.accent-line {
+				width: 100px;
+				height: 4px;
+				background: linear-gradient(90deg, var(--pv-red), var(--pv-orange));
+				margin: 2rem auto;
+			}
+		</style>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<div class="container">
+			<h1 class="logo">Full of<br/>Piss and<br/>Vinegar</h1>
+			<div class="accent-line"></div>
+			<p class="tagline">Bold • <span>Unapologetic</span> • Full of Energy</p>
+			
+			<div class="coming-soon">Coming Soon</div>
+			
+			<div class="grid">
+				<div class="card">
+					<h3>🔥 Raw Energy</h3>
+					<p>Unfiltered content that hits different</p>
+				</div>
+				<div class="card">
+					<h3>⚡ No BS</h3>
+					<p>We say what others won't</p>
+				</div>
+				<div class="card">
+					<h3>💀 Stay Bold</h3>
+					<p>Never apologize for being yourself</p>
+				</div>
+			</div>
+			
+			<footer>
+				Built with Astro • Deployed on Cloudflare Pages
+			</footer>
+		</div>
 	</body>
 </html>

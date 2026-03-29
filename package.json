@@ -2,6 +2,7 @@
   "name": "fullofpissandvinegar",
   "type": "module",
   "version": "0.0.1",
+  "description": "Full of Piss and Vinegar - Bold, unapologetic, full of energy",
   "engines": {
     "node": ">=22.12.0"
   },
