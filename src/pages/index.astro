@@ -13,17 +13,6 @@ const description = "Football banter, sarcasm, and wit - you know you've got to 
 		<meta name="description" content={description} />
 		<title>{title}</title>
 		<style>
-			:root {
-				--bg-light: #e8e8e8;
-				--bg-cream: #f5f5f0;
-				--lime: #c8e600;
-				--lime-bright: #d4ff00;
-				--gold: #d4a84b;
-				--tan: #c9a86c;
-				--navy: #2a2a3a;
-				--dark: #1a1a2e;
-				--black: #0a0a0a;
-			}
 			* {
 				margin: 0;
 				padding: 0;
@@ -31,124 +20,95 @@ const description = "Football banter, sarcasm, and wit - you know you've got to 
 			}
 			body {
 				font-family: 'Impact', 'Arial Black', 'Franklin Gothic', sans-serif;
-				background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-cream) 60%, var(--navy) 100%);
-				color: var(--black);
+				background: #e8e8e8;
+				color: #1a1a2e;
 				min-height: 100vh;
+				overflow-x: hidden;
+			}
+			.hero {
+				width: 100%;
+				min-height: 100vh;
+				background: url('/hero.jpg') center top / cover no-repeat;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				justify-content: flex-start;
-				padding-top: 3rem;
-				overflow-x: hidden;
+				padding-top: 2rem;
 				position: relative;
-			}
-			body::after {
-				content: '';
-				position: fixed;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				height: 200px;
-				background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200"><path d="M0,200 L0,150 Q30,120 60,140 Q90,100 120,130 Q150,90 180,120 Q210,80 240,110 Q270,70 300,100 Q330,60 360,90 Q390,50 420,80 Q450,40 480,70 Q510,30 540,60 Q570,20 600,50 Q630,20 660,60 Q690,30 720,70 Q750,40 780,80 Q810,50 840,90 Q870,60 900,100 Q930,70 960,110 Q990,80 1020,120 Q1050,90 1080,130 Q1110,100 1140,140 Q1170,120 1200,150 L1200,200 Z" fill="%232a2a3a"/></svg>') no-repeat bottom;
-				background-size: cover;
-				z-index: 1;
 			}
 			.container {
 				text-align: center;
 				padding: 2rem;
 				max-width: 900px;
 				z-index: 2;
-				position: relative;
 			}
-			.logo {
-				font-size: clamp(3.5rem, 12vw, 7rem);
-				font-weight: 900;
-				letter-spacing: -2px;
-				margin-bottom: 1rem;
-				text-transform: uppercase;
-				line-height: 0.85;
-				position: relative;
-				display: inline-block;
-			}
-			.logo-full-of {
-				display: inline-block;
-				background: var(--black);
-				color: white;
-				padding: 0.1rem 0.6rem;
-				font-size: 0.35em;
-				vertical-align: top;
-				margin-right: -0.5rem;
-				letter-spacing: 1px;
-			}
-			.logo-piss {
-				color: var(--lime);
-				text-shadow: 3px 3px 0 var(--black);
-			}
-			.logo-and {
-				display: inline-block;
-				background: var(--black);
-				color: white;
-				font-size: 0.25em;
-				padding: 0.2rem 0.3rem;
-				vertical-align: middle;
-				margin: 0 0.2rem;
-				writing-mode: vertical-rl;
-				text-orientation: mixed;
-				letter-spacing: 2px;
-			}
-			.logo-vinegar {
-				color: var(--gold);
-				text-shadow: 3px 3px 0 var(--black);
+			.logo-img {
+				max-width: 100%;
+				width: 500px;
+				height: auto;
+				margin-bottom: 2rem;
+				filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.3));
 			}
 			.tagline {
-				font-size: 1.3rem;
-				color: var(--black);
-				margin: 1.5rem 0;
+				font-size: 1.5rem;
+				color: #1a1a2e;
+				margin: 1rem 0 2rem;
 				font-weight: 700;
-				font-style: italic;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
 			}
 			.banter-quote {
-				font-size: 1.1rem;
-				color: var(--navy);
+				font-size: 1.2rem;
+				color: #2a2a3a;
 				font-style: italic;
 				margin: 2rem auto;
 				font-family: 'Georgia', serif;
 				max-width: 600px;
-				padding: 0 1rem;
+				padding: 1rem 1.5rem;
+				background: rgba(255,255,255,0.9);
+				border-left: 4px solid #c8e600;
+				box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
 			}
 			.coming-soon {
-				background: var(--black);
-				color: var(--lime);
-				padding: 1rem 2.5rem;
+				background: #1a1a2e;
+				color: #c8e600;
+				padding: 1.2rem 3rem;
 				font-weight: 900;
 				text-transform: uppercase;
 				letter-spacing: 4px;
 				display: inline-block;
-				font-size: 1.1rem;
+				font-size: 1.2rem;
 				margin-top: 1rem;
+				box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+				transition: all 0.3s ease;
+			}
+			.coming-soon:hover {
+				transform: translate(-2px, -2px);
+				box-shadow: 6px 6px 0 rgba(0,0,0,0.3);
 			}
 			.grid {
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 				gap: 2rem;
 				margin-top: 3rem;
-				margin-bottom: 220px;
+				margin-bottom: 100px;
 				width: 100%;
 			}
 			.card {
 				background: white;
 				padding: 2rem;
-				border: 3px solid var(--black);
-				color: var(--black);
-				box-shadow: 5px 5px 0 var(--lime);
+				border: 3px solid #1a1a2e;
+				color: #1a1a2e;
+				box-shadow: 5px 5px 0 #c8e600;
 				transition: all 0.3s ease;
 			}
 			.card:hover {
 				transform: translate(-3px, -3px);
-				box-shadow: 8px 8px 0 var(--lime);
+				box-shadow: 8px 8px 0 #c8e600;
 			}
 			.card h3 {
-				color: var(--black);
+				color: #1a1a2e;
 				margin-bottom: 1rem;
 				font-size: 1.3rem;
 				text-transform: uppercase;
@@ -161,46 +121,46 @@ const description = "Football banter, sarcasm, and wit - you know you've got to 
 			}
 			footer {
 				margin-top: 2rem;
-				color: var(--black);
+				padding: 1.5rem;
+				background: #1a1a2e;
+				color: white;
 				font-size: 0.85rem;
 				text-transform: uppercase;
 				letter-spacing: 2px;
 				font-weight: 600;
-				margin-bottom: 180px;
+				text-align: center;
+				width: 100%;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="container">
-			<div class="logo">
-				<span class="logo-full-of">FULL OF</span><br/>
-				<span class="logo-piss">PISS</span><span class="logo-and">AND</span><span class="logo-vinegar">VINEGAR</span>
-			</div>
-			
-			<p class="tagline">You know you've got to let it out!</p>
-			
-			<p class="banter-quote">"We're not here to make friends, we're here to take the piss... professionally."</p>
-			
-			<div class="coming-soon">Coming Soon</div>
-			
-			<div class="grid">
-				<div class="card">
-					<h3>⚽ Matchday Banter</h3>
-					<p>Unfiltered takes on the beautiful game</p>
-				</div>
-				<div class="card">
-					<h3>🎭 Zero Chill</h3>
-					<p>Sarcasm level: Expert. Tact: None.</p>
-				</div>
-				<div class="card">
-					<h3>🍺 Proper Wit</h3>
-					<p>Like the pub, but you can't punch us</p>
+		<div class="hero">
+			<div class="container">
+				<img src="/hero.jpg" alt="Full of Piss and Vinegar" class="logo-img" />
+				
+				<p class="banter-quote">"We're not here to make friends, we're here to take the piss... professionally."</p>
+				
+				<div class="coming-soon">Coming Soon</div>
+				
+				<div class="grid">
+					<div class="card">
+						<h3>⚽ Matchday Banter</h3>
+						<p>Unfiltered takes on the beautiful game</p>
+					</div>
+					<div class="card">
+						<h3>🎭 Zero Chill</h3>
+						<p>Sarcasm level: Expert. Tact: None.</p>
+					</div>
+					<div class="card">
+						<h3>🍺 Proper Wit</h3>
+						<p>Like the pub, but you can't punch us</p>
+					</div>
 				</div>
 			</div>
-			
-			<footer>
-				Built with Astro • Deployed on Cloudflare Pages
-			</footer>
 		</div>
+		
+		<footer>
+			Built with Astro • Deployed on Cloudflare Pages
+		</footer>
 	</body>
 </html>
